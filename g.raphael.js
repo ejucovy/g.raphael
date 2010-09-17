@@ -348,6 +348,8 @@
     Raphael.fn.g.snapEnds = function (from, to, steps) {
         var f = from,
             t = to;
+        if( isNaN(from) || isNaN(to) ) throw [from,to];
+
         if (f == t) {
             return {from: f, to: t, power: 0};
         }
@@ -380,7 +382,6 @@
         return {from: f, to: t, power: i};
     };
     Raphael.fn.g.axis = function (x, y, length, from, to, steps, orientation, labels, type, dashsize) {
-      if( isNaN(from) || isNaN(to) ) throw [from,to];
         dashsize = dashsize == null ? 2 : dashsize;
         type = type || "t";
         steps = steps || 10;
