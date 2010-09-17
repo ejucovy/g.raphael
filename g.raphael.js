@@ -348,7 +348,7 @@
     Raphael.fn.g.snapEnds = function (from, to, steps) {
         var f = from,
             t = to;
-        if( isNaN(from) || isNaN(to) ) throw [from,to];
+      if( isNaN(from) || isNaN(to) ) {console.error("!");throw [from,to];}
 
         if (f == t) {
             return {from: f, to: t, power: 0};
