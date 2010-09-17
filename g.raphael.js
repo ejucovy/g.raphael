@@ -4,8 +4,8 @@
  * Copyright (c) 2009 Dmitry Baranovskiy (http://g.raphaeljs.com)
  * Licensed under the MIT (http://www.opensource.org/licenses/mit-license.php) license.
  */
- 
- 
+
+
 (function () {
     var mmax = Math.max,
         mmin = Math.min;
@@ -380,6 +380,7 @@
         return {from: f, to: t, power: i};
     };
     Raphael.fn.g.axis = function (x, y, length, from, to, steps, orientation, labels, type, dashsize) {
+      if( from == NaN || to == NaN ) throw [from,to];
         dashsize = dashsize == null ? 2 : dashsize;
         type = type || "t";
         steps = steps || 10;
