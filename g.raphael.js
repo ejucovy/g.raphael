@@ -380,7 +380,7 @@
         return {from: f, to: t, power: i};
     };
     Raphael.fn.g.axis = function (x, y, length, from, to, steps, orientation, labels, type, dashsize) {
-      if( from == NaN || to == NaN ) throw [from,to];
+      if( isNaN(from) || isNaN(to) ) throw [from,to];
         dashsize = dashsize == null ? 2 : dashsize;
         type = type || "t";
         steps = steps || 10;
